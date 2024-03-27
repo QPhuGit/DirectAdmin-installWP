@@ -8,10 +8,10 @@ fi
 # exec 2>/usr/local/directadmin/customscripts.error.log
 
 # Set the path to the user.conf file
-user_conf_file="/usr/local/directadmin/data/users/${username}/domains/{$domain}.conf"
-
+user_conf_file="/usr/local/directadmin/data/users/${username}/domains/${domain}.conf"
+dialog --title "WP info" --msgbox "$user_conf_file"
 # Update the "installWP" checkbox state in the user.conf file
-sed -i 's/installWP=ON/installWP=OFF/g' "$user_conf_file"
+sed -i 's/installWP=ON/installWP=OFF/g' "$user_conf_file" 12 60
 
 # MOVE CONTENTS TO BACKUP FOLDER
 mkdir -p /home/$username/wp-backup/$domain-backup
