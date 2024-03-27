@@ -50,9 +50,9 @@ printf "\n\nWORDPRESS LOGIN CREDENTIALS:\nURL: http://$domain/wp-admin/\nUSERNAM
 fi
 
 # ADD LOGIN DETAILS TO TEXT FILE
-#printf "\n\nWORDPRESS LOGIN CREDENTIALS:\nURL: http://$domain/wp-admin/\nUSERNAME: $username\nPASSWORD: $wpadminpass\n\n" >> /home/$username/domains/$domain/public_html/.wp-details.txt
-#chown $username. /home/$username/domains/$domain/public_html/.wp-details.txt
-#fi
+printf "\n\nWORDPRESS LOGIN CREDENTIALS:\nURL: http://$domain/wp-admin/\nUSERNAME: $username\nPASSWORD: $wpadminpass\n\n" >> /home/$username/domains/$domain/public_html/.wp-details.txt
+chown $username. /home/$username/domains/$domain/public_html/.wp-details.txt
+fi
 
 # DELETE DOLLY PLUGIN AND INSTALL LITESPEED CACHE
 su -s /bin/bash -c "/usr/local/bin/wp plugin delete hello" $username
@@ -81,7 +81,7 @@ find . -type d -exec chmod 0755 {} \;
 find . -type f -exec chmod 0644 {} \;
 
 # WORDPRESS SECURITY AND HARDENING
-#chmod 400 /home/$username/domains/$domain/public_html/.wp-details.txt
+chmod 400 /home/$username/domains/$domain/public_html/.wp-details.txt
 chmod 400 /home/$username/domains/$domain/public_html/wp-config.php
 
 fi
