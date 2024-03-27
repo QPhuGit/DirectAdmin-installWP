@@ -5,7 +5,7 @@ if [[ $installWP != 'ON' ]]; then
 fi
 
 # Set the path to the user.conf file
-user_conf_file="/usr/local/directadmin/data/users/${username}/user.conf"
+user_conf_file="/usr/local/directadmin/data/users/${username}/domains/{$domain}.conf"
 
 # Update the "installWP" checkbox state in the user.conf file
 sed -i 's/installWP=ON/installWP=OFF/g' "$user_conf_file"
