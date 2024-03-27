@@ -9,9 +9,9 @@ fi
 
 # Set the path to the user.conf file
 user_conf_file="/usr/local/directadmin/data/users/${username}/domains/${domain}.conf"
-dialog --title "WP info" --msgbox "$user_conf_file"
+dialog --title "WP info" --msgbox "$user_conf_file" 12 60
 # Update the "installWP" checkbox state in the user.conf file
-sed -i 's/installWP=ON/installWP=OFF/g' "$user_conf_file" 12 60
+sed -i 's/installWP=ON/installWP=OFF/g' "$user_conf_file"
 
 # MOVE CONTENTS TO BACKUP FOLDER
 mkdir -p /home/$username/wp-backup/$domain-backup
