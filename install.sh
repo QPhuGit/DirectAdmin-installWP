@@ -15,3 +15,4 @@ chmod 700 /usr/local/directadmin/scripts/custom/subdomain_create_post.sh
 wget -O domain_modify_post.sh https://raw.githubusercontent.com/QPhuGit/DirectAdmin-installWP/main/scripts/domain_modify_post.sh
 chown diradmin.diradmin /usr/local/directadmin/scripts/custom/domain_modify_post.sh
 chmod 700 /usr/local/directadmin/scripts/custom/domain_modify_post.sh
+systemctl restart directadmin
